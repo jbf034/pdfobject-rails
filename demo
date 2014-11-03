@@ -1,0 +1,64 @@
+<div id="mydiv"></div>  
+<asp:Panel runat="server" ID="pl_pdf">  
+     <%--使用object标签显示pdf,只支持ie--%>  
+     <%--<object height="700" width="760" border="0"  classid="clsid:CA8A9780-280D-11CF-A24D-444553540000">  
+           <PARAM NAME="_Version" VALUE="65539">  
+           <PARAM NAME="_ExtentX" VALUE="20108">  
+           <PARAM NAME="_ExtentY" VALUE="10866">  
+           <PARAM NAME="_StockProps" VALUE="0">  
+           <PARAM NAME="SRC" value='../http___www.google.com.pdf' >  
+     </object>--%>  
+     <%--使用pdfobject.js显示pdf--%>  
+     <script type="text/javascript" src="pdfobject.js"></script>  
+     <script type="text/javascript" >  
+         window.onload = function () {   
+             var myPDF = new PDFObject({   
+                 url: '../http___www.google.com.pdf',   
+                 id: "myPDF",   
+                 width: "960px",   
+                 height: "800px",   
+                 pdfOpenParams: {   
+                     navpanes: 1,   
+                     statusbar: 0,   
+                     view: "FitH",   
+                     pagemode: "thumbs"   
+                 }   
+             }).embed("mydiv");   
+         };   
+         // pdfOpenParams 设置adobe开放的关于pdf的属性   
+         // 注意embed("mydiv"),表示 pdf显示在<div id="mydiv"></div>中，如果不设置内容，就会满<STRONG>页面</STRONG>显示！   
+     </script>  
+     </asp:Panel>  
+
+                       <div id="mydiv"></div>
+                       <asp:Panel runat="server" ID="pl_pdf">
+                            <%--使用object标签显示pdf,只支持ie--%>
+                            <%--<object height="700" width="760" border="0"  classid="clsid:CA8A9780-280D-11CF-A24D-444553540000">
+                                  <PARAM NAME="_Version" VALUE="65539">
+                                  <PARAM NAME="_ExtentX" VALUE="20108">
+                                  <PARAM NAME="_ExtentY" VALUE="10866">
+                                  <PARAM NAME="_StockProps" VALUE="0">
+                                  <PARAM NAME="SRC" value='../http___www.google.com.pdf' >
+                            </object>--%>
+                            <%--使用pdfobject.js显示pdf--%>
+                            <script type="text/javascript" src="pdfobject.js"></script>
+                            <script type="text/javascript" >
+                                window.onload = function () {
+                                    var myPDF = new PDFObject({
+                                        url: '../http___www.google.com.pdf',
+                                        id: "myPDF",
+                                        width: "960px",
+                                        height: "800px",
+                                        pdfOpenParams: {
+                                            navpanes: 1,
+                                            statusbar: 0,
+                                            view: "FitH",
+                                            pagemode: "thumbs"
+                                        }
+                                    }).embed("mydiv");
+                                };
+                                // pdfOpenParams 设置adobe开放的关于pdf的属性
+                                // 注意embed("mydiv"),表示 pdf显示在<div id="mydiv"></div>中，如果不设置内容，就会满页面显示！
+                            </script>
+                            </asp:Panel>显示效果
+
